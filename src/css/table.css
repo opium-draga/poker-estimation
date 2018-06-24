@@ -1,0 +1,19 @@
+.table .status{
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background: red;
+    border-radius: 50%;
+    text-align: center;
+    font-weight: bold;
+}
+
+.table .status.selected {
+    background: #94e096;
+}
+.table .estimation {
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 20px;
+}

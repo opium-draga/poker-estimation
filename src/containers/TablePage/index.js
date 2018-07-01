@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import UserService from "../../services/UserService";
 import {Redirect} from "react-router-dom";
-import Table from "./Table";
-import Cards from "./Cards";
 import '../../css/home.css';
 import {Button} from "antd";
+import Table from "../../components/Table";
+import Cards from "../../components/Cards";
 
-class Home extends Component {
+class TablePage extends Component {
   constructor(props) {
     super(props);
 
@@ -101,4 +101,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default TablePage;

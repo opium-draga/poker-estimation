@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import {Card} from 'antd';
-import NameInput from './NameInput';
-import EnterGameForm from './EnterGameForm';
 import {Redirect} from 'react-router-dom';
 import UserService from "../../services/UserService";
+import EnterGameForm from "../../components/EnterGameForm";
+import NameForm from "../../components/NameForm";
 
-class Login extends Component {
+
+class LoginPage extends Component {
   constructor(props) {
     super(props);
     this.userService = new UserService();
@@ -44,14 +45,14 @@ class Login extends Component {
     }
 
     return (
-        <Card style={{width: 300, textAlign: 'center'}}>
-          {this.state.name
-            ? (<EnterGameForm name={this.state.name} create={this.create} connect={this.connect}/>)
-            : (<NameInput setName={this.setName}/>)
-          }
-        </Card>
+      <Card style={{width: 300, textAlign: 'center'}}>
+        {this.state.name
+          ? (<EnterGameForm name={this.state.name} create={this.create} connect={this.connect}/>)
+          : (<NameForm setName={this.setName}/>)
+        }
+      </Card>
     );
   }
 }
 
-export default Login;
+export default LoginPage;

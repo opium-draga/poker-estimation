@@ -1,15 +1,16 @@
 import React, {Component} from 'react';
 import {Switch, Route} from 'react-router-dom';
-import Home from './Home/Home';
-import Login from './Login/Login';
+import LoginPage from "../LoginPage";
+import TablePage from "../TablePage";
+
 
 class Main extends Component {
   render() {
     return (
       <main>
         <Switch>
-          <Route exact path='/' component={Home}/>
-          <Route path='/login' component={Login}/>
+          <Route exact path='/' component={TablePage}/>
+          <Route path='/login' component={LoginPage}/>
         </Switch>
       </main>
     );

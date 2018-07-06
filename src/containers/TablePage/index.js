@@ -39,7 +39,8 @@ class TablePage extends Component {
     });
 
     this.userService.observer.subscribe('reEstimation', () => {
-      this.setState({estimation: null});
+      this.userService.setProps({selectedCard: null});
+      this.setState({estimation: null, user: this.userService.getUser()});
     });
   }
 

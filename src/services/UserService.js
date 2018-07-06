@@ -19,11 +19,6 @@ class UserService {
         return;
       }
 
-      if (res.tableId) {
-        this.setProps({tableId: res.tableId});
-        this.observer.publish('tableInit', res.tableId);
-      }
-
       if (!res.tables) {
         this.setProps({tableId: null});
       }
@@ -33,6 +28,12 @@ class UserService {
       }
 
       this.observer.publish('stateUpdate', res.tables);
+    });
+
+    this.socket.on('tableInited', res => {
+      debugger;
+      this.setProps({tableId: res.tableId});
+      this.observer.publish('tableInit', res.tableId);
     });
 
     this.socket.on('estimationReady', res => {
